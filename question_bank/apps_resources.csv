@@ -1,0 +1,35 @@
+﻿resource_id,question_id,resource_title,resource_url,source_type
+R001,AP01,Retrieval Augmented Generation (RAG) in Azure AI Search,https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview,Microsoft Docs
+R002,AP01,RAG in Azure AI Foundry,https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation,Microsoft Docs
+R003,AP02,What is Azure AI Foundry?,https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry,Microsoft Docs
+R004,AP02,Study guide - Exam AI-102,https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ai-102,Cert Study Guide
+R005,AP03,Vector search in Azure AI Search,https://learn.microsoft.com/en-us/azure/search/vector-search-overview,Microsoft Docs
+R006,AP03,What is Azure AI Search?,https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview,Microsoft Docs
+R007,AP04,RAG in Azure AI Foundry,https://learn.microsoft.com/en-us/azure/ai-foundry/concepts/retrieval-augmented-generation,Microsoft Docs
+R008,AP05,What is Microsoft Copilot Studio?,https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio,Microsoft Docs
+R009,AP05,What is Azure AI Foundry?,https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry,Microsoft Docs
+R010,AP06,What is Microsoft Copilot Studio?,https://learn.microsoft.com/en-us/microsoft-copilot-studio/fundamentals-what-is-copilot-studio,Microsoft Docs
+R011,AP07,Semantic Kernel overview,https://learn.microsoft.com/en-us/semantic-kernel/overview/,Microsoft Docs
+R012,AP08,Azure OpenAI Service overview,https://learn.microsoft.com/en-us/azure/ai-services/openai/overview,Microsoft Docs
+R013,AP08,What is Azure AI Foundry?,https://learn.microsoft.com/en-us/azure/ai-foundry/what-is-azure-ai-foundry,Microsoft Docs
+R014,AP09,Microservices architecture style,https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/microservices,Azure Architecture Center
+R015,AP09,.NET microservices architecture guide,https://learn.microsoft.com/en-us/dotnet/architecture/microservices/,Microsoft Docs
+R016,AP10,Event-driven architecture style,https://learn.microsoft.com/en-us/azure/architecture/guide/architecture-styles/event-driven,Azure Architecture Center
+R017,AP11,RESTful API design,https://learn.microsoft.com/en-us/azure/architecture/microservices/design/api-design,Azure Architecture Center
+R018,AP12,Azure Container Registry introduction,https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro,Microsoft Docs
+R019,AP12,What is Azure Kubernetes Service?,https://learn.microsoft.com/en-us/azure/aks/what-is-aks,Microsoft Docs
+R020,AP13,Azure Container Apps overview,https://learn.microsoft.com/en-us/azure/container-apps/overview,Microsoft Docs
+R021,AP14,AKS core concepts,https://learn.microsoft.com/en-us/azure/aks/concepts-clusters-workloads,Microsoft Docs
+R022,AP14,What is Azure Kubernetes Service?,https://learn.microsoft.com/en-us/azure/aks/what-is-aks,Microsoft Docs
+R023,AP15,GitHub Copilot for Azure introduction,https://learn.microsoft.com/en-us/azure/developer/github-copilot-azure/introduction,Microsoft Docs
+R024,AP15,Azure Container Apps overview,https://learn.microsoft.com/en-us/azure/container-apps/overview,Microsoft Docs
+R025,AP16,Azure App Service overview,https://learn.microsoft.com/en-us/azure/app-service/overview,Microsoft Docs
+R026,AP17,Azure App Service overview,https://learn.microsoft.com/en-us/azure/app-service/overview,Microsoft Docs
+R027,AP17,Azure Container Apps overview,https://learn.microsoft.com/en-us/azure/container-apps/overview,Microsoft Docs
+R028,AP18,Study guide - Exam AZ-400 (DevOps),https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-400,Cert Study Guide
+R029,AP19,GitHub Copilot for Azure introduction,https://learn.microsoft.com/en-us/azure/developer/github-copilot-azure/introduction,Microsoft Docs
+R030,AP20,Study guide - Exam AZ-400 (DevOps),https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-400,Cert Study Guide
+R031,AP21,Azure OpenAI - Well-Architected service guide,https://learn.microsoft.com/en-us/azure/well-architected/service-guides/azure-openai,Microsoft Docs
+R032,AP22,What is Microsoft Entra ID?,https://learn.microsoft.com/en-us/entra/fundamentals/whatis,Microsoft Docs
+R033,AP22,Study guide - Exam AZ-204 (Developer),https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-204,Cert Study Guide
+R034,AP23,Azure OpenAI Service overview,https://learn.microsoft.com/en-us/azure/ai-services/openai/overview,Microsoft Docs

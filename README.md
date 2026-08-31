@@ -1,5 +1,4 @@
 # IFCSP-AE2-SE-Knowledge-Quiz
-A repo which contains code for an app that tests a new joiners knowledge in certain areas, and provides them feedback on where to upskill further in areas they are weak in.
 
 ## Introduction
 
@@ -24,7 +23,17 @@ _This section has no word limit and may include bullet-pointed lists, tables and
 - _A Tech Stack Outline. Briefly describe the languages, libraries, tools, and storage methods you plan to use._ 
 - _A Code Design Document. Provide a class diagram or similar documentation to illustrate your code design._ 
 
+### GUI Design
 
+![alt text](img/01.png)
+![alt text](img/02.png)
+
+### Functional and Non-Functional Requirements
+
+### User Persona Map
+Include a user persona here
+
+### Tech Stack and Code Design
 
 ## Development
 
@@ -38,9 +47,17 @@ _Explain your approach to testing your digital product, demonstrating a systemat
     - _The outcome of manual tests (should be presented in a tabular format)._ 
     - _Unit testing outcome (should include screenshots of tests running - passing or failing)._ 
 
+### Testing Strategy and Methodology
+
+### Testing Outcomes
+
 ## Documentation 
 
 _User documentation should explain how end users, such as staff within your organisation, can interact with the quiz application, whereas technical documentation should outline steps such as running tests locally and explain parts of the code._
+
+### User documentation
+
+### Technical documentation
 
 ## Evaluation 
 _The evaluation section should explain what went well during the development of the project and what could have been improved. The evaluation section should be written in a genuine, reflective tone. As the README follows the conventions of software documentation, hyperlinks should be used for references instead of Harvard referencing._

@@ -1,0 +1,36 @@
+﻿resource_id,question_id,resource_title,resource_url,source_type
+R001,IN01,Azure VM sizes overview,https://learn.microsoft.com/en-us/azure/virtual-machines/sizes,Microsoft Docs
+R002,IN01,Azure Well-Architected Framework,https://learn.microsoft.com/en-us/azure/well-architected/,Microsoft Docs
+R003,IN02,Azure VM sizes overview,https://learn.microsoft.com/en-us/azure/virtual-machines/sizes,Microsoft Docs
+R004,IN02,Study guide - Exam AZ-104,https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104,Cert Study Guide
+R005,IN03,Azure availability zones overview,https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview,Microsoft Docs
+R006,IN04,Azure Hybrid Benefit (Windows Server),https://learn.microsoft.com/en-us/windows-server/get-started/azure-hybrid-benefit,Microsoft Docs
+R007,IN04,Azure Hybrid Benefit for Azure SQL,https://learn.microsoft.com/en-us/azure/azure-sql/azure-hybrid-benefit,Microsoft Docs
+R008,IN05,Cloud Adoption Framework - Migrate,https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/,Microsoft Docs
+R009,IN05,Azure Migrate overview,https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview,Microsoft Docs
+R010,IN06,Azure Migrate overview,https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview,Microsoft Docs
+R011,IN07,Cloud Adoption Framework - Migrate,https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/migrate/,Microsoft Docs
+R012,IN08,Azure Migrate overview,https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview,Microsoft Docs
+R013,IN08,Cloud Adoption Framework overview,https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/overview,Microsoft Docs
+R014,IN09,Azure landing zones,https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/,Microsoft Docs
+R015,IN09,Study guide - Exam AZ-305,https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-305,Cert Study Guide
+R016,IN10,Cloud Adoption Framework overview,https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/overview,Microsoft Docs
+R017,IN11,Azure landing zones,https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/,Microsoft Docs
+R018,IN12,Network security groups overview,https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview,Microsoft Docs
+R019,IN13,ExpressRoute introduction,https://learn.microsoft.com/en-us/azure/expressroute/expressroute-introduction,Microsoft Docs
+R020,IN13,About Azure VPN Gateway,https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways,Microsoft Docs
+R021,IN14,Hub-spoke network topology,https://learn.microsoft.com/en-us/azure/architecture/networking/architecture/hub-spoke,Azure Architecture Center
+R022,IN14,Study guide - Exam AZ-700 (Networking),https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-700,Cert Study Guide
+R023,IN15,Azure Firewall overview,https://learn.microsoft.com/en-us/azure/firewall/overview,Microsoft Docs
+R024,IN16,What is Microsoft Entra ID?,https://learn.microsoft.com/en-us/entra/fundamentals/whatis,Microsoft Docs
+R025,IN17,What is hybrid identity?,https://learn.microsoft.com/en-us/entra/identity/hybrid/whatis-hybrid-identity,Microsoft Docs
+R026,IN18,Azure Arc overview,https://learn.microsoft.com/en-us/azure/azure-arc/overview,Microsoft Docs
+R027,IN19,Azure Arc-enabled servers overview,https://learn.microsoft.com/en-us/azure/azure-arc/servers/overview,Microsoft Docs
+R028,IN19,Azure Arc overview,https://learn.microsoft.com/en-us/azure/azure-arc/overview,Microsoft Docs
+R029,IN20,Azure VMware Solution introduction,https://learn.microsoft.com/en-us/azure/azure-vmware/introduction,Microsoft Docs
+R030,IN21,Azure VMware Solution introduction,https://learn.microsoft.com/en-us/azure/azure-vmware/introduction,Microsoft Docs
+R031,IN21,Azure Migrate overview,https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview,Microsoft Docs
+R032,IN22,Microsoft Defender for Cloud introduction,https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-cloud-introduction,Microsoft Docs
+R033,IN23,Azure Site Recovery overview,https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-overview,Microsoft Docs
+R034,IN23,Azure Well-Architected Framework,https://learn.microsoft.com/en-us/azure/well-architected/,Microsoft Docs
+R035,IN24,Cloud Adoption Framework overview,https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/overview,Microsoft Docs
