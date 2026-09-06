@@ -23,6 +23,10 @@ _This section has no word limit and may include bullet-pointed lists, tables and
 - _A Tech Stack Outline. Briefly describe the languages, libraries, tools, and storage methods you plan to use._ 
 - _A Code Design Document. Provide a class diagram or similar documentation to illustrate your code design._ 
 
+There is no text input - this limits the invalidity of user input into the app. 
+
+Only allow one TopLevel window to exist at a time - TopLevel windows will host the quizes for each of the solution area; the main window may still be open - if a user presses on another solution area, while the top level is open, a message box warning will occur, asking the user to finish their quiz, or quit, before opening a new quiz.
+
 ### GUI Design
 
 ![alt text](img/01.png)
@@ -61,3 +65,5 @@ _User documentation should explain how end users, such as staff within your orga
 
 ## Evaluation 
 _The evaluation section should explain what went well during the development of the project and what could have been improved. The evaluation section should be written in a genuine, reflective tone. As the README follows the conventions of software documentation, hyperlinks should be used for references instead of Harvard referencing._
+
+If I had more time, I would streamline the code even more: QuestionFrame and AnswerFrame share a lot of the same code - so there would have been a boiler plate class that both would inherit from. If I had more time, I would have generated a set of links to be downloaded!!

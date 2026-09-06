@@ -1,58 +1,58 @@
-﻿resource_id,question_id,resource_title,resource_url,source_type
-R001,Q001,OLTP - Azure Architecture Center,https://learn.microsoft.com/en-us/azure/architecture/data-guide/relational-data/online-transaction-processing,Azure Architecture Center
-R002,Q001,Reliability - Azure Well-Architected Framework,https://learn.microsoft.com/en-us/azure/well-architected/reliability/,Microsoft Docs
-R003,Q002,What is Azure SQL? IaaS vs PaaS overview,https://learn.microsoft.com/en-us/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview,Microsoft Docs
-R004,Q002,Azure SQL Managed Instance overview,https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview,Microsoft Docs
-R005,Q002,Study guide - Exam DP-300,https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-300,Cert Study Guide
-R006,Q003,Consistency levels in Azure Cosmos DB,https://learn.microsoft.com/en-us/azure/cosmos-db/consistency-levels,Microsoft Docs
-R007,Q003,Study guide - Exam DP-420,https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-420,Cert Study Guide
-R008,Q004,Welcome to Azure Cosmos DB,https://learn.microsoft.com/en-us/azure/cosmos-db/introduction,Microsoft Docs
-R009,Q004,Choose an API in Azure Cosmos DB,https://learn.microsoft.com/en-us/azure/cosmos-db/choose-api,Microsoft Docs
-R010,Q005,Vectors in the SQL Database Engine,https://learn.microsoft.com/en-us/sql/relational-databases/vectors/vectors-sql-server,Microsoft Docs
-R011,Q006,Azure Migrate - migration overview,https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview,Microsoft Docs
-R012,Q006,Azure Database Migration Service overview,https://learn.microsoft.com/en-us/azure/dms/dms-overview,Microsoft Docs
-R013,Q007,SQL Server Migration Assistant (SSMA),https://learn.microsoft.com/en-us/sql/ssma/sql-server-migration-assistant,Microsoft Docs
-R014,Q008,Azure Database Migration Service overview,https://learn.microsoft.com/en-us/azure/dms/dms-overview,Microsoft Docs
-R015,Q008,Azure Database for PostgreSQL migration service,https://learn.microsoft.com/en-us/azure/postgresql/migrate/migration-service/overview-migration-service-postgresql,Microsoft Docs
-R016,Q009,Data Migration Assistant overview,https://learn.microsoft.com/en-us/sql/dma/dma-overview,Microsoft Docs
-R017,Q009,Azure Migrate - migration overview,https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview,Microsoft Docs
-R018,Q010,Azure Database for PostgreSQL Flexible Server overview,https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/service-overview,Microsoft Docs
-R019,Q010,Azure Database for PostgreSQL migration service,https://learn.microsoft.com/en-us/azure/postgresql/migrate/migration-service/overview-migration-service-postgresql,Microsoft Docs
-R020,Q011,OLAP - Azure Architecture Center,https://learn.microsoft.com/en-us/azure/architecture/data-guide/relational-data/online-analytical-processing,Azure Architecture Center
-R021,Q012,"OneLake, the OneDrive for data",https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview,Microsoft Docs
-R022,Q012,What is Microsoft Fabric?,https://learn.microsoft.com/en-us/fabric/fundamentals/microsoft-fabric-overview,Microsoft Docs
-R023,Q013,Fabric decision guide: Warehouse vs Lakehouse,https://learn.microsoft.com/en-us/fabric/fundamentals/decision-guide-lakehouse-warehouse,Microsoft Docs
-R024,Q013,What is data warehousing in Microsoft Fabric?,https://learn.microsoft.com/en-us/fabric/data-warehouse/data-warehousing,Microsoft Docs
-R025,Q013,Study guide - Exam DP-700,https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-700,Cert Study Guide
-R026,Q014,Direct Lake overview (Fabric),https://learn.microsoft.com/en-us/fabric/fundamentals/direct-lake-overview,Microsoft Docs
-R027,Q014,Direct Lake (Power BI),https://learn.microsoft.com/en-us/power-bi/enterprise/directlake-overview,Microsoft Docs
-R028,Q015,Tables in Fabric Warehouse,https://learn.microsoft.com/en-us/fabric/data-warehouse/tables,Microsoft Docs
-R029,Q015,What is data warehousing in Microsoft Fabric?,https://learn.microsoft.com/en-us/fabric/data-warehouse/data-warehousing,Microsoft Docs
-R030,Q016,Data Factory in Microsoft Fabric overview,https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview,Microsoft Docs
-R031,Q016,Apache Spark compute in Fabric,https://learn.microsoft.com/en-us/fabric/data-engineering/spark-compute,Microsoft Docs
-R032,Q017,Reliability - Azure Well-Architected Framework,https://learn.microsoft.com/en-us/azure/well-architected/reliability/,Microsoft Docs
-R033,Q018,Auto-failover groups - Azure SQL,https://learn.microsoft.com/en-us/azure/azure-sql/database/auto-failover-group-sql-db,Microsoft Docs
-R034,Q018,High availability - Azure SQL Database,https://learn.microsoft.com/en-us/azure/azure-sql/database/high-availability-sla,Microsoft Docs
-R035,Q019,Fabric capacity throttling,https://learn.microsoft.com/en-us/fabric/enterprise/throttling,Microsoft Docs
-R036,Q019,Fabric Capacity Metrics app,https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app,Microsoft Docs
-R037,Q020,High availability - Azure SQL Database,https://learn.microsoft.com/en-us/azure/azure-sql/database/high-availability-sla,Microsoft Docs
-R038,Q020,Azure availability zones overview,https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview,Microsoft Docs
-R039,Q021,Azure SQL Managed Instance overview,https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview,Microsoft Docs
-R040,Q021,Auto-failover groups - Azure SQL,https://learn.microsoft.com/en-us/azure/azure-sql/database/auto-failover-group-sql-db,Microsoft Docs
-R041,Q022,Microsoft Fabric licenses,https://learn.microsoft.com/en-us/fabric/enterprise/licenses,Microsoft Docs
-R042,Q023,Retrieval Augmented Generation (RAG) in Azure AI Search,https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview,Microsoft Docs
-R043,Q024,Integrated vector database in Azure Cosmos DB,https://learn.microsoft.com/en-us/azure/cosmos-db/vector-database,Microsoft Docs
-R044,Q025,Vectors in the SQL Database Engine,https://learn.microsoft.com/en-us/sql/relational-databases/vectors/vectors-sql-server,Microsoft Docs
-R045,Q025,Use pgvector in Azure Database for PostgreSQL,https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/how-to-use-pgvector,Microsoft Docs
-R046,Q025,Integrated vector database in Azure Cosmos DB,https://learn.microsoft.com/en-us/azure/cosmos-db/vector-database,Microsoft Docs
-R047,Q026,Integrated vector database in Azure Cosmos DB,https://learn.microsoft.com/en-us/azure/cosmos-db/vector-database,Microsoft Docs
-R048,Q026,Retrieval Augmented Generation (RAG) in Azure AI Search,https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview,Microsoft Docs
-R049,Q027,Mirroring Azure Cosmos DB in Microsoft Fabric,https://learn.microsoft.com/en-us/fabric/database/mirrored-database/azure-cosmos-db,Microsoft Docs
-R050,Q027,Fabric Data Agent concept,https://learn.microsoft.com/en-us/fabric/data-science/concept-data-agent,Microsoft Docs
-R051,Q027,Medallion architecture in OneLake,https://learn.microsoft.com/en-us/fabric/onelake/onelake-medallion-lakehouse-architecture,Microsoft Docs
-R052,Q028,Star schema guidance for Power BI,https://learn.microsoft.com/en-us/power-bi/guidance/star-schema,Microsoft Docs
-R053,Q029,Medallion architecture in OneLake,https://learn.microsoft.com/en-us/fabric/onelake/onelake-medallion-lakehouse-architecture,Microsoft Docs
-R054,Q030,What is Microsoft Purview?,https://learn.microsoft.com/en-us/purview/purview,Microsoft Docs
-R055,Q031,"OneLake, the OneDrive for data",https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview,Microsoft Docs
-R056,Q031,Mirroring in Microsoft Fabric,https://learn.microsoft.com/en-us/fabric/database/mirrored-database/overview,Microsoft Docs
-R057,Q032,Fabric decision guide: choose a data store,https://learn.microsoft.com/en-us/fabric/fundamentals/decision-guide-data-store,Microsoft Docs
+resource_id,question_id,resource_title,resource_url,source_type
+1,1,OLTP - Azure Architecture Center,https://learn.microsoft.com/en-us/azure/architecture/data-guide/relational-data/online-transaction-processing,Azure Architecture Center
+2,1,Reliability - Azure Well-Architected Framework,https://learn.microsoft.com/en-us/azure/well-architected/reliability/,Microsoft Docs
+3,2,What is Azure SQL? IaaS vs PaaS overview,https://learn.microsoft.com/en-us/azure/azure-sql/azure-sql-iaas-vs-paas-what-is-overview,Microsoft Docs
+4,2,Azure SQL Managed Instance overview,https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview,Microsoft Docs
+5,2,Study guide - Exam DP-300,https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-300,Cert Study Guide
+6,3,Consistency levels in Azure Cosmos DB,https://learn.microsoft.com/en-us/azure/cosmos-db/consistency-levels,Microsoft Docs
+7,3,Study guide - Exam DP-420,https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-420,Cert Study Guide
+8,4,Welcome to Azure Cosmos DB,https://learn.microsoft.com/en-us/azure/cosmos-db/introduction,Microsoft Docs
+9,4,Choose an API in Azure Cosmos DB,https://learn.microsoft.com/en-us/azure/cosmos-db/choose-api,Microsoft Docs
+10,5,Vectors in the SQL Database Engine,https://learn.microsoft.com/en-us/sql/relational-databases/vectors/vectors-sql-server,Microsoft Docs
+11,6,Azure Migrate - migration overview,https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview,Microsoft Docs
+12,6,Azure Database Migration Service overview,https://learn.microsoft.com/en-us/azure/dms/dms-overview,Microsoft Docs
+13,7,SQL Server Migration Assistant (SSMA),https://learn.microsoft.com/en-us/sql/ssma/sql-server-migration-assistant,Microsoft Docs
+14,8,Azure Database Migration Service overview,https://learn.microsoft.com/en-us/azure/dms/dms-overview,Microsoft Docs
+15,8,Azure Database for PostgreSQL migration service,https://learn.microsoft.com/en-us/azure/postgresql/migrate/migration-service/overview-migration-service-postgresql,Microsoft Docs
+16,9,Data Migration Assistant overview,https://learn.microsoft.com/en-us/sql/dma/dma-overview,Microsoft Docs
+17,9,Azure Migrate - migration overview,https://learn.microsoft.com/en-us/azure/migrate/migrate-services-overview,Microsoft Docs
+18,10,Azure Database for PostgreSQL Flexible Server overview,https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/service-overview,Microsoft Docs
+19,10,Azure Database for PostgreSQL migration service,https://learn.microsoft.com/en-us/azure/postgresql/migrate/migration-service/overview-migration-service-postgresql,Microsoft Docs
+20,11,OLAP - Azure Architecture Center,https://learn.microsoft.com/en-us/azure/architecture/data-guide/relational-data/online-analytical-processing,Azure Architecture Center
+21,12,"OneLake, the OneDrive for data",https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview,Microsoft Docs
+22,12,What is Microsoft Fabric?,https://learn.microsoft.com/en-us/fabric/fundamentals/microsoft-fabric-overview,Microsoft Docs
+23,13,Fabric decision guide: Warehouse vs Lakehouse,https://learn.microsoft.com/en-us/fabric/fundamentals/decision-guide-lakehouse-warehouse,Microsoft Docs
+24,13,What is data warehousing in Microsoft Fabric?,https://learn.microsoft.com/en-us/fabric/data-warehouse/data-warehousing,Microsoft Docs
+25,13,Study guide - Exam DP-700,https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/dp-700,Cert Study Guide
+26,14,Direct Lake overview (Fabric),https://learn.microsoft.com/en-us/fabric/fundamentals/direct-lake-overview,Microsoft Docs
+27,14,Direct Lake (Power BI),https://learn.microsoft.com/en-us/power-bi/enterprise/directlake-overview,Microsoft Docs
+28,15,Tables in Fabric Warehouse,https://learn.microsoft.com/en-us/fabric/data-warehouse/tables,Microsoft Docs
+29,15,What is data warehousing in Microsoft Fabric?,https://learn.microsoft.com/en-us/fabric/data-warehouse/data-warehousing,Microsoft Docs
+30,16,Data Factory in Microsoft Fabric overview,https://learn.microsoft.com/en-us/fabric/data-factory/data-factory-overview,Microsoft Docs
+31,16,Apache Spark compute in Fabric,https://learn.microsoft.com/en-us/fabric/data-engineering/spark-compute,Microsoft Docs
+32,17,Reliability - Azure Well-Architected Framework,https://learn.microsoft.com/en-us/azure/well-architected/reliability/,Microsoft Docs
+33,18,Auto-failover groups - Azure SQL,https://learn.microsoft.com/en-us/azure/azure-sql/database/auto-failover-group-sql-db,Microsoft Docs
+34,18,High availability - Azure SQL Database,https://learn.microsoft.com/en-us/azure/azure-sql/database/high-availability-sla,Microsoft Docs
+35,19,Fabric capacity throttling,https://learn.microsoft.com/en-us/fabric/enterprise/throttling,Microsoft Docs
+36,19,Fabric Capacity Metrics app,https://learn.microsoft.com/en-us/fabric/enterprise/metrics-app,Microsoft Docs
+37,20,High availability - Azure SQL Database,https://learn.microsoft.com/en-us/azure/azure-sql/database/high-availability-sla,Microsoft Docs
+38,20,Azure availability zones overview,https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview,Microsoft Docs
+39,21,Azure SQL Managed Instance overview,https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview,Microsoft Docs
+40,21,Auto-failover groups - Azure SQL,https://learn.microsoft.com/en-us/azure/azure-sql/database/auto-failover-group-sql-db,Microsoft Docs
+41,22,Microsoft Fabric licenses,https://learn.microsoft.com/en-us/fabric/enterprise/licenses,Microsoft Docs
+42,23,Retrieval Augmented Generation (RAG) in Azure AI Search,https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview,Microsoft Docs
+43,24,Integrated vector database in Azure Cosmos DB,https://learn.microsoft.com/en-us/azure/cosmos-db/vector-database,Microsoft Docs
+44,25,Vectors in the SQL Database Engine,https://learn.microsoft.com/en-us/sql/relational-databases/vectors/vectors-sql-server,Microsoft Docs
+45,25,Use pgvector in Azure Database for PostgreSQL,https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/how-to-use-pgvector,Microsoft Docs
+46,25,Integrated vector database in Azure Cosmos DB,https://learn.microsoft.com/en-us/azure/cosmos-db/vector-database,Microsoft Docs
+47,26,Integrated vector database in Azure Cosmos DB,https://learn.microsoft.com/en-us/azure/cosmos-db/vector-database,Microsoft Docs
+48,26,Retrieval Augmented Generation (RAG) in Azure AI Search,https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview,Microsoft Docs
+49,27,Mirroring Azure Cosmos DB in Microsoft Fabric,https://learn.microsoft.com/en-us/fabric/database/mirrored-database/azure-cosmos-db,Microsoft Docs
+50,27,Fabric Data Agent concept,https://learn.microsoft.com/en-us/fabric/data-science/concept-data-agent,Microsoft Docs
+51,27,Medallion architecture in OneLake,https://learn.microsoft.com/en-us/fabric/onelake/onelake-medallion-lakehouse-architecture,Microsoft Docs
+52,28,Star schema guidance for Power BI,https://learn.microsoft.com/en-us/power-bi/guidance/star-schema,Microsoft Docs
+53,29,Medallion architecture in OneLake,https://learn.microsoft.com/en-us/fabric/onelake/onelake-medallion-lakehouse-architecture,Microsoft Docs
+54,30,What is Microsoft Purview?,https://learn.microsoft.com/en-us/purview/purview,Microsoft Docs
+55,31,"OneLake, the OneDrive for data",https://learn.microsoft.com/en-us/fabric/onelake/onelake-overview,Microsoft Docs
+56,31,Mirroring in Microsoft Fabric,https://learn.microsoft.com/en-us/fabric/database/mirrored-database/overview,Microsoft Docs
+57,32,Fabric decision guide: choose a data store,https://learn.microsoft.com/en-us/fabric/fundamentals/decision-guide-data-store,Microsoft Docs
