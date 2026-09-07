@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 import pandas as pd
+import webbrowser
 
 class ResultsWindow(tk.Toplevel):
     def __init__(self, parent, question_set, answer_set, resource_set, sol_area, *colours):
@@ -17,12 +18,13 @@ class ResultsWindow(tk.Toplevel):
         self.resource_set = resource_set
         self.sol_area = sol_area
         self.answer_frames = []
+        self.current_question_indx = 0
         self.score = self.calculate_score()
 
         frame_for_labels = tk.Frame(self, bg=self.bg_colour)
         frame_for_labels.grid(row=0, column=0)
 
-        #self.rowconfigure(0, weight=1)
+        #self.rowconfigure(1, weight=1)
         self.columnconfigure(0, weight=1)
 
         tk.Label(frame_for_labels, text=f"{self.sol_area}", bg=self.bg_colour, fg=self.bold_font_colour, font=("Arial", 20, 'bold')).pack(side=tk.LEFT)
@@ -38,10 +40,11 @@ class ResultsWindow(tk.Toplevel):
 
         frame_for_btn = tk.Frame(self, bg=self.bg_colour)
         frame_for_btn.grid(row=2, column=0, sticky='e', padx=30)
-        tk.Button(frame_for_btn,
+        self.results_btn = tk.Button(frame_for_btn,
                     text="Get Results Breakdown",
                     font=('Arial', 20),
-                    command=lambda: True).pack()
+                    command=self.load_answer_frames)
+        self.results_btn.pack()
         
 
 
@@ -59,14 +62,18 @@ class ResultsWindow(tk.Toplevel):
             return score
 
     def display_current_question_frame(self):
-        self.question_frames[self.current_question_indx].tkraise()
+        self.answer_frames[self.current_question_indx].tkraise()
+
+    def reset_and_display_frame(self):
+        self.current_question_indx = 0
+        self.display_current_question_frame()
 
     def change_question_frame(self, direction):
         self.current_question_indx += direction
         self.display_current_question_frame()
 
     def load_answer_frames(self):
-        size = len(self.answers)
+        size = len(self.answer_set)
         for i in range(size):
             if i == 0:
                 first, last = True, False
@@ -75,17 +82,20 @@ class ResultsWindow(tk.Toplevel):
             else:
                 first, last = False, False
             af = AnswerFrame(self, 
-                             self.question_set.iloc[i], 
+                             self.question_set[i], 
                              self.answer_set.iloc[i], 
-                             self.load_answer_frames(self.question_set.iloc[i]['question_id']), 
+                             self.load_relevant_resources(self.question_set[i].question_id), 
                              self.question_set[i].selected_value.get() == self.correct_answers.iloc[i], 
                              first, 
                              last)
             self.answer_frames.append(af)
             af.grid(row=1, column=0, sticky='nswe')
+        self.display_current_question_frame()
+        self.results_btn.destroy()
 
     def load_relevant_resources(self, question_id):
-        pass
+        return self.resource_set[self.resource_set['question_id'] == question_id].loc[:, 'resource_url']
+
 
 
 class AnswerFrame(tk.Frame):
@@ -103,7 +113,7 @@ class AnswerFrame(tk.Frame):
         frame_for_question.pack(pady=10)
 
         tk.Label(frame_for_question, text=f"Question {self.question.question_id}: ", bg=container.bg_colour, font=("Arial", 20, 'bold')).pack(fill='x')
-        tk.Label(frame_for_question, text=self.question.loc['question_text'], bg=container.bg_colour, font=("Arial", 20), wraplength=600).pack()
+        tk.Label(frame_for_question, text=self.question.question_set.loc['question_text'], bg=container.bg_colour, font=("Arial", 20), wraplength=800).pack()
         tk.Label(frame_for_question, text=self.correct_text, bg=container.bg_colour, font=("Arial", 20)).pack()
 
 
@@ -112,13 +122,20 @@ class AnswerFrame(tk.Frame):
 
         option_dict = {'A':'option_a', 'B':'option_b', 'C':'option_c', 'D':'option_d'}
 
-        user_answer = self.question.question_set.loc[option_dict[self.question.selected_value.get()]]
-        correct_answer = self.answer.loc['correct_option']
+        try:
+            user_answer = self.question.question_set.loc[option_dict[self.question.selected_value.get()]]
+        except KeyError:
+            user_answer = "No answer given"
+        correct_answer = self.question.question_set.loc[option_dict[self.answer.loc['correct_option']]]
 
         tk.Label(frame_for_answers, text=f"Your answer: ", bg=container.bg_colour, font=("Arial", 20, 'bold')).pack()
-        tk.Label(frame_for_answers, text=user_answer, bg=container.bg_colour, font=("Arial", 20)).pack()
+        tk.Label(frame_for_answers, text=user_answer, bg=container.bg_colour, font=("Arial", 20), wraplength=800).pack()
         tk.Label(frame_for_answers, text=f"Correct answer: ", bg=container.bg_colour, font=("Arial", 20, 'bold')).pack()
-        tk.Label(frame_for_answers, text=correct_answer, bg=container.bg_colour, font=("Arial", 20)).pack()
+        tk.Label(frame_for_answers, text=correct_answer, bg=container.bg_colour, font=("Arial", 20), wraplength=800).pack()
+
+        frame_for_explanation = tk.Frame(self, bg=container.bg_colour)
+        frame_for_explanation.pack(pady=10)
+        tk.Label(frame_for_explanation, text=f"Explanation: {self.answer.loc['rationale']}", bg=container.bg_colour, font=("Arial", 20), wraplength=800).pack()
 
         # self.selected_value = tk.StringVar()
         # cols = ['option_a', 'option_b', 'option_c', 'option_d']
@@ -126,6 +143,17 @@ class AnswerFrame(tk.Frame):
 
         # for i, col, rbv in zip(range(4), cols, radio_button_vals):
         #     tk.Radiobutton(frame_for_options, text=self.question_set.loc[col], variable=self.selected_value, value=rbv, bg=container.bg_colour, font=("Arial", 20), wraplength=1000).grid(row=i, column=0, sticky='w')
+
+        frame_for_resources = tk.Frame(self)
+        frame_for_resources.pack(pady=10)
+
+        # Reference for hyperlink code --> https://stackoverflow.com/a/23482749
+        tk.Label(frame_for_resources, text="Learn more by clicking on the following links:", font=("Arial", 20)).pack()
+
+        for resource in resources:
+            lbl = tk.Label(frame_for_resources, text=f" • {resource}", font=("Arial", 20, "underline"), fg='blue', cursor='hand2')
+            lbl.bind("<Button-1>", lambda e, resource=resource: webbrowser.open_new_tab(resource))
+
 
         frame_for_buttons = tk.Frame(self, bg=container.bg_colour)
         frame_for_buttons.pack(fill='x', pady=10)
@@ -146,4 +174,5 @@ class AnswerFrame(tk.Frame):
         else:
             self.next_btn.pack(side='right', padx=50)
             self.prev_btn.pack(side='left', padx=50)
+
     
