@@ -19,7 +19,7 @@ class ResultsWindow(tk.Toplevel):
         self.sol_area = sol_area
         self.answer_frames = []
         self.current_question_indx = 0
-        self.score = self.calculate_score()
+        self.score = self.calculate_score(self.question_set, self.correct_answers)
 
         frame_for_labels = tk.Frame(self, bg=self.bg_colour)
         frame_for_labels.grid(row=0, column=0)
@@ -33,8 +33,8 @@ class ResultsWindow(tk.Toplevel):
         frame_for_score.grid(row=1, column=0) 
 
         tk.Label(frame_for_score, text="Your Score!", bg=self.bg_colour, font=("Arial", 20, 'bold')).pack(pady=30)
-        tk.Label(frame_for_score, text=f"{self.score}%", bg=self.bg_colour, font=("Arial", 40)).pack(pady=20)
-        tk.Label(frame_for_score, text=f"{self.calculate_score(percent=False)}/{len(self.question_set)} answered correctly!", bg=self.bg_colour, font=("Arial", 30)).pack(pady=30)
+        tk.Label(frame_for_score, text=f"{self.calculate_score(self.question_set, self.correct_answers)}%", bg=self.bg_colour, font=("Arial", 40)).pack(pady=20)
+        tk.Label(frame_for_score, text=f"{self.calculate_score(self.question_set, self.correct_answers, percent=False)}/{len(self.question_set)} answered correctly!", bg=self.bg_colour, font=("Arial", 30)).pack(pady=30)
 
 
         frame_for_btn = tk.Frame(self, bg=self.bg_colour)
@@ -45,13 +45,13 @@ class ResultsWindow(tk.Toplevel):
                     command=self.load_answer_frames)
         self.results_btn.pack()
 
-    def calculate_score(self, percent=True):
+    def calculate_score(self, question_set, correct_answers, percent=True):
         score = 0
-        for i in range(len(self.question_set)):
-            if self.question_set[i].selected_value.get() == self.correct_answers.iloc[i]:
+        for i in range(len(question_set)):
+            if question_set[i].selected_value.get() == correct_answers.iloc[i]:
                 score += 1
         if percent:
-            return int(score * 100 / len(self.question_set))
+            return int(score * 100 / len(question_set))
         else:
             return score
 
@@ -78,7 +78,7 @@ class ResultsWindow(tk.Toplevel):
             af = AnswerFrame(self, 
                              self.question_set[i], 
                              self.answer_set.iloc[i], 
-                             self.load_relevant_resources(self.question_set[i].question_id), 
+                             self.load_relevant_resources(self.resource_set, self.question_set[i].question_id), 
                              self.question_set[i].selected_value.get() == self.correct_answers.iloc[i], 
                              first, 
                              last)
@@ -87,8 +87,8 @@ class ResultsWindow(tk.Toplevel):
         self.display_current_question_frame()
         self.results_btn.destroy()
 
-    def load_relevant_resources(self, question_id):
-        return self.resource_set[self.resource_set['question_id'] == question_id].loc[:, 'resource_url']
+    def load_relevant_resources(self, resource_set, question_id):
+        return resource_set[resource_set['question_id'] == question_id].loc[:, 'resource_url']
 
 
 

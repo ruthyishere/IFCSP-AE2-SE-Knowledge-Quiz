@@ -18,12 +18,10 @@ class SolAreaQuiz(tk.Toplevel):
         self.columnconfigure(0, weight=1)
 
         sol_area_map = {"AI/Apps": "apps", "Data": "data", "Infrastructure": "infra"}
-        self.questions = self.load_csv(sol_area_map[sol_area], "questions")
-        self.answers = self.load_csv(sol_area_map[sol_area], "answers")
-        self.resources = self.load_csv(sol_area_map[sol_area], "resources")
-        self.question_frames = []
-
-        self.load_questions()
+        self.questions_df = self.load_csv(sol_area_map[sol_area], "questions")
+        self.answers_df = self.load_csv(sol_area_map[sol_area], "answers")
+        self.resources_df = self.load_csv(sol_area_map[sol_area], "resources")
+        self.question_frames = self.load_questions(self.questions_df)
 
         self.current_question_indx = 0
 
@@ -36,18 +34,23 @@ class SolAreaQuiz(tk.Toplevel):
 
         self.display_current_question_frame()
 
-    def load_questions(self):
-        size = len(self.questions)
-        for i in range(size):
-            if i == 0:
-                first, last = True, False
-            elif i == size - 1:
-                first, last = False, True
-            else:
-                first, last = False, False
-            qf = QuestionFrame(self, self.questions.iloc[i], first, last)
-            self.question_frames.append(qf)
-            qf.grid(row=1, column=0, sticky='nswe')
+    def load_questions(self, questions_df):
+        try:
+            size = len(questions_df)
+            qfs = []
+            for i in range(size):
+                if i == 0:
+                    first, last = True, False
+                elif i == size - 1:
+                    first, last = False, True
+                else:
+                    first, last = False, False
+                qf = QuestionFrame(self, questions_df.iloc[i], first, last)
+                qfs.append(qf)
+                qf.grid(row=1, column=0, sticky='nswe')
+            return qfs
+        except Exception as e:
+            return False
 
 
     def load_csv(self, choice, csv_type):
@@ -62,11 +65,14 @@ class SolAreaQuiz(tk.Toplevel):
         self.display_current_question_frame()
 
     def submit(self):
-        result = messagebox.askyesnocancel(f"Submit", f"Are you sure you want to submit?")
-        if result:
-            self.destroy()
-            self.parent.open_results_window(self.question_frames, self.answers, self.resources, self.sol_area, self.bg_colour, self.bold_font_colour)
-
+        try:
+            result = messagebox.askyesnocancel(f"Submit", f"Are you sure you want to submit?")
+            if result:
+                self.destroy()
+                self.parent.open_results_window(self.question_frames, self.answers_df, self.resources_df, self.sol_area, self.bg_colour, self.bold_font_colour)
+            return True
+        except Exception as e:
+            return False
 
 class QuestionFrame(tk.Frame):
     def __init__(self, container, question_set, is_first = True, is_last=False): #question_set
