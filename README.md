@@ -15,7 +15,7 @@ This application will be developed as an MVP using Python (with applicable libra
 Because this is an MVP, only essential functionality is within scope e.g. input validation, quiz functionality, score keeping, curation of links and resources. This is such that development can continue upon validation of the MVP. 
 
 
-## Design
+## Design -- Wed, Thurs
 
 _This section has no word limit and may include bullet-pointed lists, tables and images._
 - _A GUI Design using Figma or another prototyping tool. Include screenshots and (optionally) a link. The design should be specific to your application and show the planned user journey._
@@ -32,30 +32,32 @@ Only allow one TopLevel window to exist at a time - TopLevel windows will host t
 ![alt text](img/01.png)
 ![alt text](img/02.png)
 
-### Functional and Non-Functional Requirements
+### Functional and Non-Functional Requirements -- Wed
 
-### User Persona Map
+### User Persona Map -- Wed
 Include a user persona here
 
-### Tech Stack and Code Design
+### Tech Stack and Code Design -- Thurs
 
-## Development
+## Development -- Tues
 
 _In this section, include relevant code blocks using triple backticks (```) to format your code clearly. Explain how your application works by describing the main parts of your code, such as important functions, classes, or modules. Provide enough detail to demonstrate your understanding of how each part contributes to the overall functionality. There is no word limit; focus on clarity and completeness._
 
-## Testing
+## Testing -- Tues
 
 _Explain your approach to testing your digital product, demonstrating a systematic and strategic approach. Address the following topics:_ 
-- _Testing strategy and methodology (summarise and justify different methods of testing you have used, for example, manual and automated unit testing) _
+- _Testing strategy and methodology (summarise and justify different methods of testing you have used, for example, manual and automated unit testing)_
 - _Outcomes of application testing:_ 
     - _The outcome of manual tests (should be presented in a tabular format)._ 
     - _Unit testing outcome (should include screenshots of tests running - passing or failing)._ 
 
 ### Testing Strategy and Methodology
 
+Manual testing (examples of manual test - not all will be included); unit testing (unittest with Mock or Magic Mock) that tests each python files functionality, then integration test that tests the entire application logic.
+
 ### Testing Outcomes
 
-## Documentation 
+## Documentation -- Thurs
 
 _User documentation should explain how end users, such as staff within your organisation, can interact with the quiz application, whereas technical documentation should outline steps such as running tests locally and explain parts of the code._
 
@@ -63,7 +65,7 @@ _User documentation should explain how end users, such as staff within your orga
 
 ### Technical documentation
 
-## Evaluation 
+## Evaluation -- Fri
 _The evaluation section should explain what went well during the development of the project and what could have been improved. The evaluation section should be written in a genuine, reflective tone. As the README follows the conventions of software documentation, hyperlinks should be used for references instead of Harvard referencing._
 
 If I had more time, I would streamline the code even more: QuestionFrame and AnswerFrame share a lot of the same code - so there would have been a boiler plate class that both would inherit from. If I had more time, I would have generated a set of links to be downloaded!!

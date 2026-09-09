@@ -1,8 +1,6 @@
 """
 Remember to include the following in your app
 
-Implementation using some object-oriented programming principles. 
-
 Comprehensive code documentation, including descriptive docstrings. 
 
 Exception handling and input validation. 
@@ -85,9 +83,12 @@ class MainQuizApp(tk.Tk):
             OR None if user cancels choice
         '''
         result = messagebox.askyesnocancel(f"Confirm Choice: {choice}", f"Your chosen topic: {choice}. Are you sure?")
-        if result:
-            self.open_quiz_window(choice)
-            return choice
+        try:
+            if result:
+                self.open_quiz_window(choice)
+            return True
+        except:
+            return False
 
     def open_quiz_window(self, choice):
         """
@@ -98,12 +99,21 @@ class MainQuizApp(tk.Tk):
         returns:
             None
         """
-        window = SolAreaQuiz(self, choice, *self.colour_theme[choice][1:])
-        window.grab_set()
+        try:
+            colours = self.colour_theme[choice][1:]
+            window = SolAreaQuiz(self, choice, *colours)
+            window.grab_set()
+            return "OK"
+        except Exception as e:
+            return e
 
     def open_results_window(self, container, question_set, answer_set, resources_set, sol_area, *colours):
-        window = ResultsWindow(self, container, question_set, answer_set, resources_set, sol_area, *colours)
-        window.grab_set()
+        try:
+            window = ResultsWindow(self, container, question_set, answer_set, resources_set, sol_area, *colours)
+            window.grab_set()
+            return True
+        except:
+            return False
 
     
 

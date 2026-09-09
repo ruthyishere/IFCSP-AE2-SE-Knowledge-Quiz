@@ -2,6 +2,72 @@ import tkinter as tk
 from tkinter import messagebox
 import pandas as pd
 
+
+class SolAreaQuiz(tk.Toplevel):
+    def __init__(self, parent, sol_area, *colours):
+        super().__init__(parent)
+
+        self.geometry("800x800")
+        self.title(f'{sol_area} Knowledge Quiz')
+        self.bg_colour, self.bold_font_colour = colours
+        self.config(bg=self.bg_colour)
+        self.parent = parent
+        self.sol_area = sol_area
+
+        self.rowconfigure(1, weight=1)
+        self.columnconfigure(0, weight=1)
+
+        sol_area_map = {"AI/Apps": "apps", "Data": "data", "Infrastructure": "infra"}
+        self.questions = self.load_csv(sol_area_map[sol_area], "questions")
+        self.answers = self.load_csv(sol_area_map[sol_area], "answers")
+        self.resources = self.load_csv(sol_area_map[sol_area], "resources")
+        self.question_frames = []
+
+        self.load_questions()
+
+        self.current_question_indx = 0
+
+
+        frame_for_labels = tk.Frame(self)
+        frame_for_labels.grid(row=0, column=0)
+
+        tk.Label(frame_for_labels, text=f"{sol_area}", bg=self.bg_colour, fg=self.bold_font_colour, font=("Arial", 20, 'bold')).pack(side=tk.LEFT)
+        tk.Label(frame_for_labels, text="Knowledge Quiz", bg=self.bg_colour, font=("Arial", 20)).pack(side=tk.LEFT)
+
+        self.display_current_question_frame()
+
+    def load_questions(self):
+        size = len(self.questions)
+        for i in range(size):
+            if i == 0:
+                first, last = True, False
+            elif i == size - 1:
+                first, last = False, True
+            else:
+                first, last = False, False
+            qf = QuestionFrame(self, self.questions.iloc[i], first, last)
+            self.question_frames.append(qf)
+            qf.grid(row=1, column=0, sticky='nswe')
+
+
+    def load_csv(self, choice, csv_type):
+        with open(f"question_bank/{choice}_{csv_type}.csv", "r") as file:
+            return pd.read_csv(file)
+
+    def display_current_question_frame(self):
+        self.question_frames[self.current_question_indx].tkraise()
+
+    def change_question_frame(self, direction):
+        self.current_question_indx += direction
+        self.display_current_question_frame()
+
+    def submit(self):
+        result = messagebox.askyesnocancel(f"Submit", f"Are you sure you want to submit?")
+        if result:
+            self.destroy()
+            self.parent.open_results_window(self.question_frames, self.answers, self.resources, self.sol_area, self.bg_colour, self.bold_font_colour)
+
+
 class QuestionFrame(tk.Frame):
     def __init__(self, container, question_set, is_first = True, is_last=False): #question_set
         super().__init__(container)
@@ -53,82 +119,3 @@ class QuestionFrame(tk.Frame):
             self.prev_btn.pack(side='left', padx=50)
 
             
-
-class SolAreaQuiz(tk.Toplevel):
-    def __init__(self, parent, sol_area, *colours):
-        super().__init__(parent)
-
-        self.geometry("800x800")
-        self.title(f'{sol_area} Knowledge Quiz')
-        self.bg_colour, self.bold_font_colour = colours
-        self.config(bg=self.bg_colour)
-        self.parent = parent
-        self.sol_area = sol_area
-
-        self.rowconfigure(1, weight=1)
-        self.columnconfigure(0, weight=1)
-
-        sol_area_map = {"AI/Apps": "apps", "Data": "data", "Infrastructure": "infra"}
-        self.questions = self.load_csv(sol_area_map[sol_area], "questions")
-        self.answers = self.load_csv(sol_area_map[sol_area], "answers")
-        self.resources = self.load_csv(sol_area_map[sol_area], "resources")
-        self.question_frames = []
-
-        self.load_questions()
-
-        self.current_question_indx = 0
-
-
-        frame_for_labels = tk.Frame(self)
-        frame_for_labels.grid(row=0, column=0)
-
-        tk.Label(frame_for_labels, text=f"{sol_area}", bg=self.bg_colour, fg=self.bold_font_colour, font=("Arial", 20, 'bold')).pack(side=tk.LEFT)
-        tk.Label(frame_for_labels, text="Knowledge Quiz", bg=self.bg_colour, font=("Arial", 20)).pack(side=tk.LEFT)
-
-        self.display_current_question_frame()
-        #self.question_frames[0].display_frame(self)
-        #self.display_questions()
-
-    def load_questions(self):
-        #print(questions.iloc[0])
-
-        size = len(self.questions)
-        for i in range(size):
-            if i == 0:
-                first, last = True, False
-            elif i == size - 1:
-                first, last = False, True
-            else:
-                first, last = False, False
-            qf = QuestionFrame(self, self.questions.iloc[i], first, last)
-            self.question_frames.append(qf)
-            qf.grid(row=1, column=0, sticky='nswe')
-
-
-    def load_csv(self, choice, csv_type):
-        with open(f"question_bank/{choice}_{csv_type}.csv", "r") as file:
-            return pd.read_csv(file)
-
-    def display_current_question_frame(self):
-        self.question_frames[self.current_question_indx].tkraise()
-
-    def change_question_frame(self, direction):
-        self.current_question_indx += direction
-        self.display_current_question_frame()
-
-    def submit(self):
-        result = messagebox.askyesnocancel(f"Submit", f"Are you sure you want to submit?")
-        if result:
-            # self.parent.questions = self.question_frames
-            # self.parent.answers = self.answers
-            # self.parent.resources = self.resources
-            self.destroy()
-            self.parent.open_results_window(self.question_frames, self.answers, self.resources, self.sol_area, self.bg_colour, self.bold_font_colour)
-            #self.destroy()
-
-
-    # def display_questions(self, question_set=""):
-    #     question_frame = QuestionFrame(self, question_set)
-
-
-

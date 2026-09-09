@@ -24,7 +24,6 @@ class ResultsWindow(tk.Toplevel):
         frame_for_labels = tk.Frame(self, bg=self.bg_colour)
         frame_for_labels.grid(row=0, column=0)
 
-        #self.rowconfigure(1, weight=1)
         self.columnconfigure(0, weight=1)
 
         tk.Label(frame_for_labels, text=f"{self.sol_area}", bg=self.bg_colour, fg=self.bold_font_colour, font=("Arial", 20, 'bold')).pack(side=tk.LEFT)
@@ -45,13 +44,8 @@ class ResultsWindow(tk.Toplevel):
                     font=('Arial', 20),
                     command=self.load_answer_frames)
         self.results_btn.pack()
-        
-
-
-
 
     def calculate_score(self, percent=True):
-        #correct_answers = self.answer_set.loc[:, 'correct_option']
         score = 0
         for i in range(len(self.question_set)):
             if self.question_set[i].selected_value.get() == self.correct_answers.iloc[i]:
@@ -137,13 +131,6 @@ class AnswerFrame(tk.Frame):
         frame_for_explanation.pack(pady=10)
         tk.Label(frame_for_explanation, text=f"Explanation: {self.answer.loc['rationale']}", bg=container.bg_colour, font=("Arial", 20), wraplength=800).pack()
 
-        # self.selected_value = tk.StringVar()
-        # cols = ['option_a', 'option_b', 'option_c', 'option_d']
-        # radio_button_vals = ['A', 'B', 'C', 'D']
-
-        # for i, col, rbv in zip(range(4), cols, radio_button_vals):
-        #     tk.Radiobutton(frame_for_options, text=self.question_set.loc[col], variable=self.selected_value, value=rbv, bg=container.bg_colour, font=("Arial", 20), wraplength=1000).grid(row=i, column=0, sticky='w')
-
         frame_for_resources = tk.Frame(self)
         frame_for_resources.pack(pady=10)
 
@@ -152,6 +139,7 @@ class AnswerFrame(tk.Frame):
 
         for resource in resources:
             lbl = tk.Label(frame_for_resources, text=f" • {resource}", font=("Arial", 20, "underline"), fg='blue', cursor='hand2')
+            lbl.pack()
             lbl.bind("<Button-1>", lambda e, resource=resource: webbrowser.open_new_tab(resource))
 
 
