@@ -12,6 +12,8 @@ class MainQuizApp(tk.Tk):
         open_window
     """
     def __init__(self):
+        # Set up the Main App
+
         super().__init__()
 
         self.title("SE Knowledge Quiz App")           
@@ -24,7 +26,7 @@ class MainQuizApp(tk.Tk):
             "Infrastructure":[ "#99cde0", "#c7f1fd", "#5cc1e6"]
         }
 
-        # Create Main Title for Window
+        # Set up the main title for the window
 
         tk.Label(self, text="Welcome to the", bg=self.bg_colour, font=("Arial", 20)).pack()
 
