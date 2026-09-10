@@ -1,16 +1,7 @@
-"""
-Remember to include the following in your app
-
-Comprehensive code documentation, including descriptive docstrings. 
-
-Exception handling and input validation. 
-
-Testable logic, exemplified by pure functions for input validation that consistently return the same output given the same parameters. 
-"""
-import tkinter as tk
-from tkinter import messagebox
-from quiz_page import SolAreaQuiz
-from results_page import ResultsWindow
+import tkinter as tk # For GUI 
+from tkinter import messagebox # For message pop ups
+from quiz_page import SolAreaQuiz # For main quiz windpw
+from results_page import ResultsWindow # For display of results 
 
 
 class MainQuizApp(tk.Tk):
@@ -77,10 +68,10 @@ class MainQuizApp(tk.Tk):
         Produces message box to confirm if user has made the right choice, then triggers another method that opens another quiz app window.
         
         args:
-            choice (str): the selected choice as a string
+            choice (str): the selected quiz topic as a string
         returns:
-            choice (str): the selected choice as a string
-            OR None if user cancels choice
+            True (bool): if there are no Exceptions thrown
+            OR False if there are exceptions thrown
         '''
         result = messagebox.askyesnocancel(f"Confirm Choice: {choice}", f"Your chosen topic: {choice}. Are you sure?")
         try:
@@ -95,9 +86,10 @@ class MainQuizApp(tk.Tk):
         Creates seperate window to host quiz of user's choice
 
         args:
-            choice (str): selected choice as a string
+            choice (str): the selected quiz topic as a string
         returns:
-            None
+            "OK" (str): if there are no Exceptions thrown
+            OR e (Exception) if there are exceptions thrown
         """
         try:
             colours = self.colour_theme[choice][1:]
@@ -107,9 +99,23 @@ class MainQuizApp(tk.Tk):
         except Exception as e:
             return e
 
-    def open_results_window(self, container, question_set, answer_set, resources_set, sol_area, *colours):
+    def open_results_window(self, question_set, answer_set, resources_set, sol_area, *colours):
+        """
+        Creates seperate window to host display results of user's quiz
+
+        args:
+            question_set (QuestionFrame): list of questions in the form on tk.Frames, with the associated user answers
+            answer_set (pandas.DataFrame): corresponding set of answers for the questions, loaded from csv file into a pandas df
+            resource_set (pandas.DataFrame): corresponding set of documentation links for the questions and answers, loaded from csv file into a pandas df
+            sol_area (str): the selected quiz topic as a string
+            colours (tuple of str): colour theme for the results window as a tuple of two hex strings
+        returns:
+            True (bool): if there are no Exceptions thrown
+            OR False if there are exceptions thrown
+        
+        """
         try:
-            window = ResultsWindow(self, container, question_set, answer_set, resources_set, sol_area, *colours)
+            window = ResultsWindow(self, question_set, answer_set, resources_set, sol_area, *colours)
             window.grab_set()
             return True
         except:

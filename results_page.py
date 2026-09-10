@@ -1,6 +1,4 @@
 import tkinter as tk
-from tkinter import messagebox
-import pandas as pd
 import webbrowser
 
 class ResultsWindow(tk.Toplevel):
@@ -19,7 +17,6 @@ class ResultsWindow(tk.Toplevel):
         self.sol_area = sol_area
         self.answer_frames = []
         self.current_question_indx = 0
-        self.score = self.calculate_score(self.question_set, self.correct_answers)
 
         frame_for_labels = tk.Frame(self, bg=self.bg_colour)
         frame_for_labels.grid(row=0, column=0)
@@ -58,9 +55,9 @@ class ResultsWindow(tk.Toplevel):
     def display_current_question_frame(self):
         self.answer_frames[self.current_question_indx].tkraise()
 
-    def reset_and_display_frame(self):
-        self.current_question_indx = 0
-        self.display_current_question_frame()
+    # def reset_and_display_frame(self):
+    #     self.current_question_indx = 0
+    #     self.display_current_question_frame()
 
     def change_question_frame(self, direction):
         self.current_question_indx += direction

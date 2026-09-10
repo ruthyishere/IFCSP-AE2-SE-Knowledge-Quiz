@@ -4,6 +4,16 @@ import pandas as pd
 
 
 class SolAreaQuiz(tk.Toplevel):
+    """
+    Main quiz window for the application.
+
+    It contains several tk.Frames (QuestionFrames) that display each question, and buttons that navigate to the next or previous question.
+    
+    It has a colour theme depending on the topic the user chooses.
+
+    It imports the question, answer and resource data from CSVs and loads them into Pandas DataFrames and displays the first question.
+    
+    """
     def __init__(self, parent, sol_area, *colours):
         super().__init__(parent)
 
