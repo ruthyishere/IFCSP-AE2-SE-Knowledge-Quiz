@@ -1,4 +1,4 @@
-# IFCSP-AE2-SE-Knowledge-Quiz
+# IFCSP AE2: Cloud & AI Solution Engineering Knowledge Quiz
 
 ## Introduction
 Microsoft's sales and commercial organisation, Microsoft Customer and Partner Solutions (MCAPS), delivers consultative sales engagement, working with third party vendors to showcase the value of Microsoft's technology to a range of customers and clients. Solution engineers work within the pre-sales sub-organisation called the Specialist Teams Unit, which work with clients and customers to help them understand how they can use Microsoft technlogy within their organisation, helping to secure a sales win. Solution engineers are deeply technical, but also consultative - they need to understand how to apply the technology in various nuanced and sometimes complex client situations. In order to be prepared, they will not only need to know and understand their specific technology area, but also how to know when and where to apply it. 
@@ -62,7 +62,6 @@ The following is the code design diagram for application:
 ![Class Diagram](img/class_diagram.png)
 
 ## Development
-
 
 There are three python files that run the application - ```main.py```, ```quiz_page.py```, ```results_page.py```
 
@@ -318,13 +317,7 @@ class AnswerFrame(tk.Frame):
 ```
 
 
-## Testing -- Thurs
-
-_Explain your approach to testing your digital product, demonstrating a systematic and strategic approach. Address the following topics:_ 
-- _Testing strategy and methodology (summarise and justify different methods of testing you have used, for example, manual and automated unit testing)_
-- _Outcomes of application testing:_ 
-    - _The outcome of manual tests (should be presented in a tabular format)._ 
-    - _Unit testing outcome (should include screenshots of tests running - passing or failing)._ 
+## Testing
 
 ### Testing Strategy and Methodology
 
@@ -371,22 +364,152 @@ The following is the results of some of the integration and unit testing. For ea
 *```test_quiz_page.py```*
 
 ![Failing Test](img/test_quiz_page_01.png)
+![Passing Test](img/test_quiz_page_02.png)
 
 *```test_results_page.py```*
 
 ![Failing Test](img/test_results_page_01.png)
+![Passing Test](img/test_results_page_02.png)
 
-## Documentation -- Fri
+## Documentation
 
-_User documentation should explain how end users, such as staff within your organisation, can interact with the quiz application, whereas technical documentation should outline steps such as running tests locally and explain parts of the code._
+To run this application:
+
+1. Open this repo in VSCode
+2. Go to the top left menu bar, and select Terminal, then New Terminal
+3. The terminal will pop up at the bottom of the screen. Enter and run the following command: ```venv\Scripts\Activate.ps1```
+4. Then run ```python main.py```
+
+The start window should pop up:
+
+![Main App Start Window](img/main_start_window.png)
 
 ### User documentation
 
+Run through the steps detailed above. The GUI has been intentionally made to be easily navigable, with only buttons to be pressed by the user.
+
+Select your chosen solution area you want to test your knowledge on. 
+
+You will then be presented with a series of questions, one after the other, of which there is only one answer to. Select that answer and click Next to navigate to the next question. You also have the option to naviagte back to previous questions and to check your answers. You can also leave a question blank. When you get to the last question, there will be a button to either travel back or proceed to submit your answers. You are advised to go back and double check any answers you left blank or are unsure about. 
+
+When you submit, you will be presented with your score as a percentage and as the number of questions you correctly answered out of the total. You will then be given the option to look at each question and answer break down, which will display your answer, the correct answer, whether you correctly or incorrectly answered the question, an explanation of why, and a list of hyperlinks to documentation for further reading. You can navigate back and forth between each answer and its breakdown.
+
+
 ### Technical documentation
 
-## Evaluation -- Fri
-_The evaluation section should explain what went well during the development of the project and what could have been improved. The evaluation section should be written in a genuine, reflective tone. As the README follows the conventions of software documentation, hyperlinks should be used for references instead of Harvard referencing._
+This app is made using Python 3.13.14. Please look at ```requirements.txt``` for package dependencies to install.
 
-If I had more time, I would streamline the code even more: QuestionFrame and AnswerFrame share a lot of the same code - so there would have been a boiler plate class that both would inherit from. If I had more time, I would have generated a set of links to be downloaded!!
+This repository is available from ```https://github.com/ruthyishere/IFCSP-AE2-SE-Knowledge-Quiz/tree/main``` - please clone the repository if you would like a local version of it by running the following git command.
 
-, however, a CSV extraction of links and resources they would like to work on will be generated and provided to the user. 
+Windows and Mac: ```git clone "https://github.com/ruthyishere/IFCSP-AE2-SE-Knowledge-Quiz.git"```
+
+To run the required package dependencies, run the following command in the terminal: ```pip install -r requirements.txt```
+
+Questions, answers and resources (which are links to documentation and further reading surrounding a question and answer) are stored in CSV files as an intriem solution. They can be replaced by a SQL database later down the line.
+
+Each solution area has three CSV files, each for the set of questions, corresponding answers and resources.
+
+Columns and column data types for questions are as follows:
+```
+question_id (int) (PK),
+solution_area (str),
+domain (str),
+subdomain (str),
+question_type (str),
+level (int),
+question_text (str),
+option_a (str),
+option_b (str),
+option_c (str),
+option_d (str)
+```
+
+Columns for answers are as follows:
+```
+answer_id (int) (PK),
+question_id (int) (FK),
+correct_option (char),
+correct_answer_text (str),
+rationale (str),
+scenario_anchor (str)
+```
+
+Columns for resources are as follows:
+```
+resource_id (int) (PK),
+question_id (int) (FK),
+resource_title (str),
+resource_url (str),
+source_type (str)
+```
+
+To add a question, it'll be easier to add a question at the end of teh question set, instead of the the start or middle, as it will require updating ```question_id``` for all questions in all csv files. When adding a question, remember to add the appropriate answer and resource to the other csv files, making note to add the appropriate primary key and foreign keys. ```question_id`` is a foreign key in all csv tables.
+
+If there are any missing or malformed csv files, the app will inform you, such as in the following example:
+
+![Error Loading missing CSV file](img/error.png)
+
+To add a solution area, add the three extra csv files for questions, answers and resources in the following format:
+```
+<solution area>_questions.csv
+<solution area>_answers.csv
+<solution area>_resources.csv
+```
+
+For example:
+
+```
+copilot_questions.csv
+copilot_answers.csv
+copilot_resources.csv
+```
+Make sure you provide the same schema as detailed above for each row you provide each csv file.
+
+Then, navigate to ```main.MainAppQuiz``` to add a colour theme and an button, like in this example:
+
+```
+class MainQuizApp(tk.Tk):
+    ...
+    self.colour_theme = {
+                "AI/Apps":[ "#d7919d", "#f0cfd5", "#eb445a"],
+                "Data": ["#8ad3cb", "#d1fdf9", "#5ac5b3"],
+                "Infrastructure":[ "#99cde0", "#c7f1fd", "#5cc1e6"]
+                "Copilot": ["#d9d982", "#f9f9c1", "#e7e74a"]
+            }
+    ...
+    tk.Button(self,
+                text="Copilot",
+                bg=self.colour_theme["Copilot"][0],
+                fg="white",
+                font=('Arial', 20),
+                width = 25,
+                command=lambda: self.confirm_quiz_choice("Copilot")).pack(pady=10)
+    ...
+```
+
+Then navigate to ```quiz_page.SolAreaQuz``` to add the following, like in this example:
+
+```
+class SolAreaQuiz(tk.Toplevel):
+    ...
+    sol_area_map = {"AI/Apps": "apps", 
+                    "Data": "data", 
+                    "Infrastructure": "infra",
+                    "Copilot": <>}
+```
+
+To run the unit tests, run the following commands in the terminal to run them.
+- To test ```main.py```: run ```python -m unittest -v test_main```
+- To test ```quiz_page.py```: run ```python -m unittest -v test_quiz_page```
+- To test ```results_page.py```: run ```python -m unittest -v test_results_page```
+
+## Evaluation
+
+There is an initiative within my department to create resources for early in career solution engineers to understand their solution area and upskill deeply and conversationally. There will be a variety of customer / client scenarios where they will be asked to apply their technical knowledge to business needs and problems. I think the development of the app is something I can demo and share with the team leading this initiative, so that they can build upon it and develop it for further use. 
+
+What went "well" is entirely dependent on subjective metrics of "success", but I can say that I did mostly enjoy writing code and developing, and manually testing it. The unittest are, however, a bit verbose, and could be streamlined and simplified. They were the hardest to build, due to the use of [```patch``` and ```Mock/MagicMock```](https://docs.python.org/3/library/unittest.mock.html) - this functionality was very difficult to understand and implement. 
+
+If I had more time, I would streamline the code even more: QuestionFrame and AnswerFrame share a lot of the same code - so there could have been a class that both would inherit from. I would also have generated a set of links to be downloaded as a CSV file after the user has checked their marked answers. I would have also created an interface where an admin can add questions, answers and resources easily and seamlessly, which would most likely require the CSVs to be replaced by a database. I could also use Flask or Streamlit as the GUI interface, and deploy this as a web app. I would have spent more time making sure that the app was also easier for developers to update.
+
+Most of the time was spent trying to make the GUI work properly, as opposed to the backend functionality of the app. It made me realise that backend development is something I enjoy more.
+

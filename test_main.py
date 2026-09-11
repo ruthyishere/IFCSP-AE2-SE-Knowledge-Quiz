@@ -1,4 +1,4 @@
-import unittest # importing testing framework#
+import unittest # importing testing framework
 from unittest.mock import patch, Mock #to mock and abstract functionality
 from main import MainQuizApp # import code to test
 

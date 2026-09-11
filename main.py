@@ -30,7 +30,7 @@ class MainQuizApp(tk.Tk):
 
         tk.Label(self, text="Welcome to the", bg=self.bg_colour, font=("Arial", 20)).pack()
 
-        tk.Label(self, text="Cloud & AI Solution Engineering Knowledge Tester!", bg=self.bg_colour, font=("Arial", 30, "bold")).pack()
+        tk.Label(self, text="Cloud & AI Solution Engineering Knowledge Quiz!", bg=self.bg_colour, font=("Arial", 30, "bold")).pack()
 
         # Create instructions for the user
 

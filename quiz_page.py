@@ -39,22 +39,28 @@ class SolAreaQuiz(tk.Toplevel):
         # Load the CSV file data and set current frame pointer to 0
 
         sol_area_map = {"AI/Apps": "apps", "Data": "data", "Infrastructure": "infra"}
-        self.questions_df = self.load_csv(sol_area_map[sol_area], "questions")
-        self.answers_df = self.load_csv(sol_area_map[sol_area], "answers")
-        self.resources_df = self.load_csv(sol_area_map[sol_area], "resources")
-        self.question_frames = self.load_questions(self.questions_df)
 
-        self.current_question_indx = 0
+        try:
+            self.questions_df = self.load_csv(sol_area_map[sol_area], "questions")
+            self.answers_df = self.load_csv(sol_area_map[sol_area], "answers")
+            self.resources_df = self.load_csv(sol_area_map[sol_area], "resources")
+            self.question_frames = self.load_questions(self.questions_df)
+        except Exception as e:
+            tk.Label(self, text=f"Urmmmm... So yeah... this is awkward... 😅", bg=self.bg_colour, fg=self.bold_font_colour, font=("Arial", 20, 'bold')).pack()
+            tk.Label(self, text=f"Something went wrong with loading the quiz data! --> {e}", bg=self.bg_colour, font=("Arial", 20), wraplength=500).pack()
+        else:
 
-        # Set up title displayed on the window and display the first question
+            self.current_question_indx = 0
 
-        frame_for_labels = tk.Frame(self)
-        frame_for_labels.grid(row=0, column=0)
+            # Set up title displayed on the window and display the first question
 
-        tk.Label(frame_for_labels, text=f"{sol_area}", bg=self.bg_colour, fg=self.bold_font_colour, font=("Arial", 20, 'bold')).pack(side=tk.LEFT)
-        tk.Label(frame_for_labels, text="Knowledge Quiz", bg=self.bg_colour, font=("Arial", 20)).pack(side=tk.LEFT)
+            frame_for_labels = tk.Frame(self)
+            frame_for_labels.grid(row=0, column=0)
 
-        self.display_current_question_frame()
+            tk.Label(frame_for_labels, text=f"{sol_area}", bg=self.bg_colour, fg=self.bold_font_colour, font=("Arial", 20, 'bold')).pack(side=tk.LEFT)
+            tk.Label(frame_for_labels, text="Knowledge Quiz", bg=self.bg_colour, font=("Arial", 20)).pack(side=tk.LEFT)
+
+            self.display_current_question_frame()
 
     def load_questions(self, questions_df):
         """
