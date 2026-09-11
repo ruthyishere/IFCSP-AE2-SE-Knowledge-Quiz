@@ -443,7 +443,7 @@ resource_url (str),
 source_type (str)
 ```
 
-To add a question, it'll be easier to add a question at the end of teh question set, instead of the the start or middle, as it will require updating ```question_id``` for all questions in all csv files. When adding a question, remember to add the appropriate answer and resource to the other csv files, making note to add the appropriate primary key and foreign keys. ```question_id`` is a foreign key in all csv tables.
+To add a question, it'll be easier to add a question at the end of teh question set, instead of the the start or middle, as it will require updating ```question_id``` for all questions in all csv files. When adding a question, remember to add the appropriate answer and resource to the other csv files, making note to add the appropriate primary key and foreign keys. ```question_id``` is a foreign key in all csv tables.
 
 If there are any missing or malformed csv files, the app will inform you, such as in the following example:
 
