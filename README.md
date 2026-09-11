@@ -329,7 +329,7 @@ Manual testing was the main method of testing since the application is GUI based
 
 #### Manual testing
 
-The following is a table that contains a subset of the manual testing done at the beginning of the development process.
+The following is a table that contains a subset of the manual testing done at the beginning of the development process. (A PDF of this table containing screenshots is in this repo and will be uploaded to Canvas)
 
 | What is being tested | Expected Outcome | Actual Outcome | Notes |
 | -------------------- | ---------------- | -------------- | ----- |
